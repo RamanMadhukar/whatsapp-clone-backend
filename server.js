@@ -4,6 +4,9 @@ import mongoose from 'mongoose'
 import Messages from './dbMessages.js';
 import Pusher from "pusher";
 import cors from 'cors'
+// require('dotenv').config();
+// require('dotenv').config();
+import 'dotenv/config'
 
 
 
@@ -24,7 +27,7 @@ app.use(cors());
 // });
 
 // db config
-const connection_url = 'mongodb+srv://raman:4563@cluster0.dcjqp.mongodb.net/whatsappDatabase?retryWrites=true&w=majority'
+const connection_url = process.env.CONNECTION_URI;
 
 mongoose.connect(connection_url, {
     useNewUrlParser: true,
